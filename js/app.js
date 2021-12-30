@@ -108,7 +108,24 @@ function filtrarAuto() {
 
         // console.log(resultado);
 
-        mostrarAutos(resultado);
+        
+
+        if(resultado.length ){
+                mostrarAutos(resultado);
+        }else{
+            noResultado();
+        }
+}
+
+function noResultado(){
+
+    limpiarHTML();
+
+    const noResultado = document.createElement('div');
+    noResultado.classList.add('alerta','error');
+    noResultado.textContent = 'No hay resultado, intenta con otras opciones de busquedas ';
+
+    resultado.appendChild(noResultado);
 }
 
 function filtrarMarcar(auto) {
